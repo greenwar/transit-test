@@ -1,0 +1,99 @@
+{
+  "bounds": [
+    -123.3903,
+    36.7985,
+    -120.9129,
+    38.6342
+  ],
+  "center": [
+    -122.1378,
+    37.7622,
+    8
+  ],
+  "format": "png",
+  "interactivity": false,
+  "minzoom": 5,
+  "maxzoom": 18,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "polygon",
+      "extent": [
+        -122.4131441116333,
+        37.00351229798302,
+        -121.56614542007446,
+        37.776439059278346
+      ],
+      "id": "caltrain",
+      "class": "",
+      "Datasource": {
+        "file": "http://s3.amazonaws.com/Embark-Will-Rutledge/datasources/caltrain.zip",
+        "id": "caltrain",
+        "project": "project",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "caltrain"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -122.53860473632811,
+        37.70397186279297,
+        -122.36366271972658,
+        37.8377571105957
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "http://s3.amazonaws.com/Embark-Will-Rutledge/datasources/stuff.zip",
+        "table": "(select * from shapes where mon_morning is not null AND route_short_name NOT IN ('F','J','M','N','KT','L')\norder by route_short_name)",
+        "attachdb": "",
+        "extent": "",
+        "id": "sfmta",
+        "project": "project",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "id": "sfmta",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "sfmta"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -122.53860473632811,
+        37.70397186279297,
+        -122.36366271972658,
+        37.8377571105957
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "http://s3.amazonaws.com/Embark-Will-Rutledge/datasources/stuff.zip",
+        "table": "(SELECT * FROM shapes \nWHERE mon_morning IS NOT NULL\nAND route_short_name in ('F','J','M','N','KT','L')\nORDER BY route_short_name\n)",
+        "attachdb": "",
+        "extent": "",
+        "id": "lightrail_sfmta",
+        "project": "project",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "id": "lightrail_sfmta",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "lightrail_sfmta"
+    }
+  ],
+  "scale": 2,
+  "metatile": 4,
+  "name": "Test Overlay",
+  "description": "Testing some overlays",
+  "attribution": ""
+}
